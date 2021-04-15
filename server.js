@@ -3,7 +3,8 @@ const app = express()
 
 //connect to mondodb
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/whiteboard', {useNewUrlParser: true, useUnifiedTopology: true});
+const mongoURI = process.env.MONGODB_URI
+mongoose.connect(`mongodb://${mongoURI}/whiteboard`, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //configure CORS
 app.use(function (req, res, next) {
