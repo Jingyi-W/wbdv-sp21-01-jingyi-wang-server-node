@@ -5,10 +5,10 @@ module.exports = (app) => {
 
   }
   const findAllQuizzes = (req, res) => {
-    res.send(quizzesService.findAllQuizzes())
+    quizzesService.findAllQuizzes().then(allQuizzes => res.json(allQuizzes))
   }
   const findQuizById = (req, res) => {
-    res.send(quizzesService.findQuizById(req.params['qid']))
+    quizzesService.findQuizById(req.params['quizId']).then(quiz => res.json(quiz))
   }
   const updateQuiz = (req, res) => {
 
@@ -18,5 +18,5 @@ module.exports = (app) => {
   }
 
   app.get('/api/quizzes', findAllQuizzes)
-  app.get('/api/quizzes/:qid', findQuizById)
+  app.get('/api/quizzes/:quizId', findQuizById)
 }

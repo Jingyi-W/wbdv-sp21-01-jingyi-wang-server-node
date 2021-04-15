@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 
+//connect to mondodb
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/whiteboard', {useNewUrlParser: true, useUnifiedTopology: true});
+
 //configure CORS
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -13,5 +17,6 @@ app.use(function (req, res, next) {
 
 require('./controllers/quizzes-controller')(app)
 require('./controllers/question-controller')(app)
+require('./controllers/quiz-attempts-controller')(app)
 
 app.listen(3000)
