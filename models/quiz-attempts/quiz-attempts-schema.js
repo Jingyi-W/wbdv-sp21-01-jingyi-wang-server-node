@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const questionSchema = require('../questions/questions-schema')
+const questionsSchema = require('../questions/questions-schema')
 const quizAttempts = mongoose.Schema({
   _id: String,
   score: Number,
