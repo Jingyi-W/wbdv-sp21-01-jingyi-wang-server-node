@@ -4,6 +4,6 @@ const quizAttempts = mongoose.Schema({
   _id: String,
   score: Number,
   quiz: {type: String, ref: 'QuizzesModel'},
-  answers: [questionSchema]
+  answers: [questionsSchema]
 }, {collection: 'quizAttempts'})
 module.exports = quizAttempts
