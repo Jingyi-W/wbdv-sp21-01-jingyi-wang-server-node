@@ -19,7 +19,7 @@ module.exports = (app) => {
   app.get("/api/questions", findAllQuestions)
   app.get("/api/questions/:questionId", findQuestionById)
   app.get("/api/quizzes/:quizId/questions", findQuestionsForQuiz)
-  
+
   app.get("/hello", sayHello)
 }
 
