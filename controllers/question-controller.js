@@ -12,7 +12,9 @@ module.exports = (app) => {
     questionsService.findQuestionsForQuiz(req.params['quizId']).then(questions => res.json(questions))
   }
   const updateQuestion = (req, res) => {
-    questionsService.updateQuestion(req.params['questionId'], req.body).then(question => res.json(question))
+    questionsService.updateQuestion(req.params['questionId'], req.body).then(question => {
+      res.json(question)
+    })
   }
 
   const sayHello = (req, res) => {

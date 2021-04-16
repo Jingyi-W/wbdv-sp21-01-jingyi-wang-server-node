@@ -3,7 +3,9 @@ const questionsDao = require('../daos/questions-dao')
 const findAllQuestions = () => questionsDao.findAllQuestions()
 const findQuestionById = (qid) => questionsDao.findQuestionById(qid)
 const findQuestionsForQuiz = (quizId) => questionsDao.findQuestionsForQuiz(quizId)
-const updateQuestion = (questionId, newQuestion) => questionsDao.updateQuestion(questionId, newQuestion)
+const updateQuestion = (questionId, newQuestion) => {
+  return questionsDao.updateQuestion(questionId, newQuestion)
+}
 module.exports = { findAllQuestions, findQuestionById, findQuestionsForQuiz, updateQuestion }
 
 
